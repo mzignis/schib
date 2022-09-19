@@ -8,11 +8,15 @@ TODO
 
 used python version: ```3.9.9``` <br>
 install requirements: ```pip install -r requirements.txt``` <br>
+<br>
+<br>
 
 ### to run: <br>
 ```python3 main.py -i path/to/input/csv/file.csv```
 <br>
-example: ```python3 main.py -i data/sales_report_input.csv'
+<br>
+example: ```python3 main.py -i data/sales_report_input.csv```
+<br>
 <br>
 #### args:
 - `-i / --input` - fileptah to input csv
