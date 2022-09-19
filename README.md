@@ -11,7 +11,11 @@ install requirements: ```pip install -r requirements.txt``` <br>
 
 ### to run: <br>
 ```python3 main.py -i path/to/input/csv/file.csv```
-addition args:
-- `-o / --output`- filepath to output
-- `-s / --separator` - csv separator
+<br>
+example: ```python3 main.py -i data/sales_report_input.csv'
+<br>
+#### args:
+- `-i / --input` - fileptah to input csv
+- `-o / --output`- filepath to output csv
+- `-s / --separator` - csv separator; default: ";"
 - `-k / --key` - api key
