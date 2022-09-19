@@ -1,15 +1,15 @@
 # schibsted-interview
 
 ## 1. SQL
-TODO
+
+### 1.1
+```sdada```
 
 
 ## 2. Python
 
 used python version: ```3.9.9``` <br>
 install requirements: ```pip install -r requirements.txt``` <br>
-<br>
-<br>
 
 ### to run: <br>
 ```python3 main.py -i path/to/input/csv/file.csv```
