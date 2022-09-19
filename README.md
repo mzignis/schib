@@ -3,7 +3,12 @@
 ## 1. SQL
 
 ### 1.1
-```SELECT campaign_id FROM public.campaign_stats ORDER BY impressions DESC ```
+```
+select date, campaign_id from
+(select date(hour) as date, campaign_id, sum(impressions) from campaign_stats group by date(hour), campaign_id order by sum(impressions) desc)
+group by date;
+
+```
 
 ### 1.2
 ```to do```
