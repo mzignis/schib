@@ -124,3 +124,4 @@ pip install -r requirements.txt
 - `-k / --key` api key
 
 on default settings ```main.py``` save result csv in ```data``` folder 
+example output: ```data/sales_report_output_20220919_020001.csv```
