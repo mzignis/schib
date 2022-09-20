@@ -43,7 +43,13 @@ group by day
 ```
 
 ### 1.3
-```to do```
+```
+select campaign_id, date(hour), 100 * (sum(clicks) / sum(impressions)) as ctr from campaign_stats
+where date(hour) = '2021-04-20'
+group by date(hour), campaign_id
+order by ctr desc
+limit 10;
+```
 
 ### 1.4
 ```to do```
