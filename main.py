@@ -62,7 +62,6 @@ if __name__ == '__main__':
     parser.add_argument('-k', '--key', type=str, default=KEY, help='key to exchangerate-api.com')
 
     args = parser.parse_args()
-    print(args)
     main(
         input_filepath=pathlib.Path(args.input),
         output_filepath=args.output,
