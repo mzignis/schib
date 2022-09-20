@@ -98,7 +98,7 @@ where name REGEXP '([a-z]|[A-Z])+-([a-z]|[A-Z])+-([0-9])+-([a-z]|[A-Z])+';
 
 ## 2. Python
 
-used python version: ```3.9.9``` <br>
+python version: ```3.9.9``` <br>
 install requirements: ```pip install -r requirements.txt``` <br>
 
 ### to run: <br>
@@ -113,5 +113,4 @@ install requirements: ```pip install -r requirements.txt``` <br>
 - `-s / --separator` csv separator; default: `;`
 - `-k / --key` api key
 
-
-
+on default settings ```main.py``` save result csv in ```data``` folder 
