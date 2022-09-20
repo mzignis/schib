@@ -16,7 +16,31 @@ group by date;
 ```
 
 ### 1.2
-```to do```
+```
+select * from
+(
+  select
+  date(hour) as day,
+  campaign_id,
+  advertiser.name as advertiser_name,
+  publisher.name as publisher_name,
+  campaign.name as campaign_name,
+  creative.name as creative_name
+  from campaign_stats
+  join advertiser
+  on campaign_stats.advertiser_id = advertiser.id
+  join publisher
+  on campaign_stats.publisher_id = publisher.id
+  join campaign
+  on campaign_stats.campaign_id = campaign.id
+  join creative
+  on campaign_stats.creative_id = creative.id
+  group by date(hour), campaign_id
+  order by sum(impressions) desc
+) as inner_table
+group by day
+;
+```
 
 ### 1.3
 ```to do```
