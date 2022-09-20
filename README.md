@@ -99,13 +99,23 @@ where name REGEXP '([a-z]|[A-Z])+-([a-z]|[A-Z])+-([0-9])+-([a-z]|[A-Z])+';
 ## 2. Python
 
 python version: ```3.9.9``` <br>
-install requirements: ```pip install -r requirements.txt``` <br>
+
+establish venv:
+``` 
+python3 -m venv venv
+source venv/bin/activate
+```
+
+install requirements: 
+```
+pip install -r requirements.txt
+``` 
 
 ### to run: <br>
-```python3 main.py -i path/to/input/csv/file.csv```
+```python main.py -i path/to/input/csv/file.csv```
 
 #### example: 
-```python3 main.py -i data/sales_report_input.csv```
+```python main.py -i data/sales_report_input.csv```
 
 #### args:
 - `-i / --input` fileptah to input csv
