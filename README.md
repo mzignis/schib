@@ -1,6 +1,6 @@
 # schibsted-interview
 
-## 1. SQL
+## 1. sql
 
 ### 1.1
 ```
@@ -96,7 +96,7 @@ select name from creative
 where name REGEXP '([a-z]|[A-Z])+-([a-z]|[A-Z])+-([0-9])+-([a-z]|[A-Z])+';
 ```
 
-## 2. Python
+## 2. python
 
 python version: ```3.9.9``` <br>
 
