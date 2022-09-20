@@ -5,9 +5,13 @@
 ### 1.1
 ```
 select date, campaign_id from
-(select date(hour) as date, campaign_id, sum(impressions) from campaign_stats group by date(hour), campaign_id order by sum(impressions) desc)
+(
+  select date(hour) as date, campaign_id, sum(impressions)
+  from campaign_stats 
+  group by date(hour), campaign_id 
+  order by sum(impressions) desc
+) as inner_table
 group by date;
-
 ```
 
 ### 1.2
