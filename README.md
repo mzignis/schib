@@ -52,6 +52,7 @@ limit 10;
 ```
 
 ### 1.4
+v1
 ```
 select distinct campaign_stats.campaign_id from
 campaign_stats
@@ -59,6 +60,7 @@ right join norstat_report
 on campaign_stats.campaign_id = norstat_report.campaign_id;
 ```
 
+v2
 ```
 select distinct campaign_id
 from campaign_stats 
