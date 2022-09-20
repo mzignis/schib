@@ -37,9 +37,9 @@ select * from
   on campaign_stats.creative_id = creative.id
   group by date(hour), campaign_id
   order by sum(impressions) desc
-) as inner_table
-group by day
-;
+) 
+as inner_table
+group by day;
 ```
 
 ### 1.3
@@ -52,10 +52,33 @@ limit 10;
 ```
 
 ### 1.4
-```to do```
+```
+select distinct campaign_stats.campaign_id from
+campaign_stats
+right join norstat_report
+on campaign_stats.campaign_id = norstat_report.campaign_id;
+```
+
+```
+select distinct campaign_id
+from campaign_stats 
+where campaign_id in 
+(
+  select campaign_id 
+  from norstat_report
+);
+```
 
 ### 1.5
-```to do```
+```
+select distinct campaign_id 
+from campaign_stats 
+where campaign_id not in 
+(
+  select campaign_id 
+  from norstat_report
+);
+```
 
 ### 1.6
 ```to do```
