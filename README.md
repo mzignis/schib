@@ -86,13 +86,13 @@ where campaign_id not in
 
 if "string" is any char
 ```
-select * from creative
+select name from creative
 where name REGEXP '.+-.+-[0-9]+-.+';
 ```
 
 if "string" is only letters
 ```
-select * from creative
+select name from creative
 where name REGEXP '([a-z]|[A-Z])+-([a-z]|[A-Z])+-([0-9])+-([a-z]|[A-Z])+';
 ```
 
