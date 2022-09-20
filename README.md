@@ -123,5 +123,5 @@ pip install -r requirements.txt
 - `-s / --separator` csv separator; default: `;`
 - `-k / --key` api key
 
-on default settings ```main.py``` save result csv in ```data``` folder 
+on default settings ```main.py``` save result csv in ```data``` folder <br>
 example output: ```data/sales_report_output_20220919_020001.csv```
