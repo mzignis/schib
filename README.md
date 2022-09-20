@@ -81,7 +81,18 @@ where campaign_id not in
 ```
 
 ### 1.6
-```to do```
+
+if "string" is any char
+```
+select * from creative
+where name REGEXP '.+-.+-[0-9]+-.+';
+```
+
+if "string" is only letters
+```
+select * from creative
+where name REGEXP '([a-z]|[A-Z])+-([a-z]|[A-Z])+-([0-9])+-([a-z]|[A-Z])+';
+```
 
 ## 2. Python
 
