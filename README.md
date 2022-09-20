@@ -10,7 +10,8 @@ select date, campaign_id from
   from campaign_stats 
   group by date(hour), campaign_id 
   order by sum(impressions) desc
-) as inner_table
+)
+as inner_table
 group by date;
 ```
 
