@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "s-interview"
+version = "0.1.0"
+description = ""
+authors = ["Marek Załęcki"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dateutil = "^2.8.2"
+pandas = "^2.1.4"
+spark = "^0.2.1"
+pyspark = "^3.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.0.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
