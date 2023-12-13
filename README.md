@@ -26,7 +26,7 @@ python3 run_pyspark.py -t 1
 ```
 
 ### args
-- `-t / --task` task number; default: `1`
+- `-t / --task` task number
 - `-i / --inventory` fileptah to inventory parquet; defalt `data/inventory.parquet`
 - `-u / --users` fileptah to inventory parquet; defalt `data/selected_users.parquet`
 
