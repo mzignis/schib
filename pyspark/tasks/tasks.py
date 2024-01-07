@@ -18,7 +18,9 @@ def task1(dataframe: pyspark.sql.dataframe.DataFrame) -> pyspark.sql.dataframe.D
     df = dataframe.groupBy('date').agg(countDistinct(col('user_id')).alias('total'))
 
     # join and calculate percentage
-    df = df.join(df_logged_in, on='date').withColumn(
+    # old version
+    # df = df.join(df_logged_in, on='date').withColumn(...
+    df = df.join(df_logged_in, on='date', how='left').fillna(0).withColumn(
         'percent_logged_in [%]', round(col('logged_in') / col('total') * 100, 3)
     ).drop('total').drop('logged_in')
 
@@ -93,11 +95,17 @@ def task6(
     Calculate total clicks for people in campaign per day
 
     """
+    # old version
+    #
+    # df = dataframe_inventory.join(
+    #     dataframe_users, on="user_id", how="inner"
+    # ).filter(col('event') == 'click').groupBy('date').agg(
+    #     count(col('event')).alias('total clicks for people in campaign')
+    # )
+
     df = dataframe_inventory.join(
-        dataframe_users, on="user_id", how="inner"
-    ).filter(col('event') == 'click').groupBy('date').agg(
-        count(col('event')).alias('total clicks for people in campaign')
-    )
+        dataframe_users, on="user_id", how="leftsemi"
+    ).filter(col('event') == 'click').groupBy('date').agg(count(col('event')).alias('total'))
 
     return df.orderBy(col('date'))
 
@@ -109,17 +117,23 @@ def task7(
     Calculate total clicks for people not in campaign per day
 
     """
-    df_login = dataframe_inventory.join(
-        dataframe_users, on="user_id", how="inner"
-    ).filter(col('event') == 'click').groupBy('date').agg(count(col('event')).alias('login'))
+    # old version
+    #
+    # df_login = dataframe_inventory.join(
+    #     dataframe_users, on="user_id", how="inner"
+    # ).filter(col('event') == 'click').groupBy('date').agg(count(col('event')).alias('login'))
+    #
+    # df_total = dataframe_inventory.join(
+    #     dataframe_users, on="user_id", how="outer"
+    # ).filter(col('event') == 'click').groupBy('date').agg(count(col('event')).alias('total'))
+    #
+    # df = df_total.join(df_login, on='date').withColumn(
+    #     'ptotal clicks for people not in campaign', col('total') - col('login')
+    # ).drop('total').drop('login')
 
-    df_total = dataframe_inventory.join(
-        dataframe_users, on="user_id", how="outer"
+    df = dataframe_inventory.join(
+        dataframe_users, on="user_id", how="leftanti"
     ).filter(col('event') == 'click').groupBy('date').agg(count(col('event')).alias('total'))
-
-    df = df_total.join(df_login, on='date').withColumn(
-        'ptotal clicks for people not in campaign', col('total') - col('login')
-    ).drop('total').drop('login')
 
     return df.orderBy('date')
 
